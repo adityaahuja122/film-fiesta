@@ -15,6 +15,7 @@ const SearchPage = ({apiPath}) => {
         const url =`https://api.themoviedb.org/3/${apiPath}?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`;
         setUrl(url);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[query])
 
     return (
