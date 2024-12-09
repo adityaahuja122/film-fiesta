@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { MovieCard, renderSkeletons } from '../components';
 import { useDynamicTitle, useFetch } from '../hooks';
 import { useSearchParams } from 'react-router-dom';
 
 const SearchPage = ({apiPath}) => {
-    const [searchParams,setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
     const query = searchParams.get('q');
     const url =`https://api.themoviedb.org/3/${apiPath}?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`;
     const {data:movies,isLoading,error,setUrl}= useFetch(url)
