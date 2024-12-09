@@ -1,6 +1,8 @@
 import React from 'react'
+import { useDynamicTitle } from '../hooks'
 
-const PageNotFound = () => {
+const PageNotFound = (title) => {
+  useDynamicTitle(title)
   return (
     <div>PageNotFound</div>
   )

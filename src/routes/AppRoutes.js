@@ -5,13 +5,13 @@ import { MovieDetailPage, MovieListPage, PageNotFound, SearchPage } from "../pag
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<MovieListPage key="nowPlaying" apiPath="movie/now_playing" />} />
-      <Route path="/movies/popular" element={<MovieListPage key="popular" apiPath="movie/popular" />} />
-      <Route path="/movies/top-rated" element={<MovieListPage key="topRated" apiPath="movie/top_rated" />} />
-      <Route path="/movies/upcoming" element={<MovieListPage key="upcoming" apiPath="movie/upcoming" />} />
-      <Route path="/movies/search" element={<SearchPage apiPath="search/movie" />} />
-      <Route path="/movie/detail/:id" element={<MovieDetailPage apiPath="movie/" />} />
-      <Route path="*" element={<PageNotFound />} />
+      <Route path="/" element={<MovieListPage key="nowPlaying" apiPath="movie/now_playing" title="Home | Film Feista"/>} />
+      <Route path="/movies/popular" element={<MovieListPage key="popular" apiPath="movie/popular" title="Popular | Film Feista"/>} />
+      <Route path="/movies/top-rated" element={<MovieListPage key="topRated" apiPath="movie/top_rated" title="Top-Rated | Film Feista"/>} />
+      <Route path="/movies/upcoming" element={<MovieListPage key="upcoming" apiPath="movie/upcoming" title="Upcoming | Film Feista"/>} />
+      <Route path="/movies/search" element={<SearchPage apiPath="search/movie" title="Search | Film Feista"/>} />
+      <Route path="/movie/detail/:id" element={<MovieDetailPage apiPath="movie/" title="MovieDetails | Film Feista"/>} />
+      <Route path="*" element={<PageNotFound />} title="Page Not Found | Film Feista"/>
     </Routes>
   );
 };

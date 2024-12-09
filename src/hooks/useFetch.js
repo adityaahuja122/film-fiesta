@@ -7,16 +7,16 @@ const useFetch = (initialUrl) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log("useEffect of useFetch Called!");
+    // console.log("useEffect of useFetch Called!");
     const abortController = new AbortController();
 
     const fetchData = async () => {
-        console.log("Fetching data");
+        // console.log("Fetching data");
       setIsLoading(true);
       try {
         const response = await fetch(url, { signal: abortController.signal });
         if (!response.ok) {
-          setError('Failed to fetch data');
+          // setError('Failed to fetch data');
           setData(null);
         } else {
           const result = await response.json();

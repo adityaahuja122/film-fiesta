@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useFetch } from "../hooks"; 
+import { useDynamicTitle, useFetch } from "../hooks"; 
 
-const MovieDetailPage = ({ apiPath }) => {
+const MovieDetailPage = ({ apiPath,title }) => {
   const { id } = useParams();
 
   const { data: movie, isLoading, error, setUrl } = useFetch();
-
+  useDynamicTitle(title)
   useEffect(() => {
     if (id) {
       const updatedUrl = `https://api.themoviedb.org/3/${apiPath}${id}?api_key=${process.env.REACT_APP_API_KEY}`;
